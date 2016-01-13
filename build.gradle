@@ -1,14 +1,40 @@
 group 'plast'
 version '1.0-SNAPSHOT'
 
+buildscript {
+
+    repositories {
+        mavenCentral()
+        ivy {
+            url "../ivy-repo"
+        }
+    }
+
+    dependencies {
+        classpath 'plast-lab:doop-gradle-plugin:1.0-SNAPSHOT'
+    }
+}
+
 apply plugin: 'java'
+apply plugin: 'doop'
+apply plugin: 'application'
 
-sourceCompatibility = 1.5
 
-repositories {
-    mavenCentral()
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.9'
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+doop {
+    //host = 'centauri.di.uoa.gr'
+    host = 'localhost'
+    port = 8000
+    username = 'saikos'
+    password = 'saikos123'
+    analysis.options.jre = '1.7'
+    analysis.options.soot = '2.5.0'
+    analysis.options.use_original_names = true
+    analysis.options.only_application_classes_fact_gen = true
+    analysis.options.main_class = "demo.Main"
+    analysis.options.ssa = true
 }
+

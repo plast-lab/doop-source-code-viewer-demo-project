@@ -1,4 +1,4 @@
-/**
+package demo; /**
  * Created by anantoni on 13/1/2016.
  */
 import extras.*;
@@ -8,13 +8,18 @@ public class Main {
 
     public static void main(String[] args) {
         Test test1 = new Test();
-        Test test3 = new Test(test1, new Test2(), new Test2());
+        test1.speak();
         test1 = foo();
 
         Test2 test2 = bar(new Test2());
 
         test1.speak(new Test2());
+        test2.speak();
+
+        Test test3 = new Test(test1, new Test2(), new Test2());
+        test1 = new Test();
         test3.speak(test2);
+        test1.speak();
         staticTest = foo();
 
         test2.speak();
