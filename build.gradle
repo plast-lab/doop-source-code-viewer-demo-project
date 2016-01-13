@@ -35,6 +35,5 @@ doop {
     analysis.options.use_original_names = true
     analysis.options.only_application_classes_fact_gen = true
     analysis.options.main_class = "demo.Main"
-    analysis.options.ssa = true
 }
 

@@ -16,9 +16,7 @@ public class Main {
         test1.speak(new Test2());
         test2.speak();
 
-        Test test3 = new Test(test1, new Test2(), new Test2());
         test1 = new Test();
-        test3.speak(test2);
         test1.speak();
         staticTest = foo();
 
@@ -26,7 +24,7 @@ public class Main {
         int a = 1;
         staticTest = foo();
 
-        test1 = new Main().buz(a, test3, test2);
+        test1 = new Main().buz(a, new Test(), test2);
         test1.speak();
         test1 = new Main().buz();
         test1 = foo(test1, test2);
