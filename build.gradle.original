@@ -1,0 +1,11 @@
+build.gradle
+group 'plast'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.9'
+}
