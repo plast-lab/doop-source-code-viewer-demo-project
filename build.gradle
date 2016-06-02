@@ -31,9 +31,8 @@ doop {
     username = 'saikos'
     password = 'saikos123'
     analysis.options.jre = '1.7'
-    analysis.options.soot = '2.5.0'
     analysis.options.use_original_names = true
-    analysis.options.only_application_classes_fact_gen = true
+    //analysis.options.only_application_classes_fact_gen = true
     analysis.options.main_class = "demo.Main"
 }
 

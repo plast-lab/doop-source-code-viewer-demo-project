@@ -1,7 +1,11 @@
-package demo; /**
+package demo;
+/**
  * Created by anantoni on 13/1/2016.
  */
 import extras.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     private static Test staticTest;
@@ -23,6 +27,21 @@ public class Main {
         test2.speak();
         int a = 1;
         staticTest = foo();
+
+        List<Test> myTestList = new ArrayList<>();
+        List<Test2> myTest2List = new ArrayList<>();
+        myTestList.add(new Test());
+        myTestList.add(test1);
+        myTest2List.add(test2);
+        myTest2List.add(new Test2());
+        for (Test element : myTestList) {
+            element.speak();
+            element.speak(test2);
+        }
+
+        for (Test2 element : myTest2List) {
+            element.speak();
+        }
 
         test1 = new Main().buz(a, new Test(), test2);
         test1.speak();
