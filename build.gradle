@@ -1,4 +1,4 @@
-group 'plast'
+group 'org.clyze'
 version '1.0-SNAPSHOT'
 
 buildscript {
@@ -11,7 +11,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'plast-lab:doop-gradle-plugin:1.0-SNAPSHOT'
+        classpath 'org.clyze:doop-gradle-plugin:1.0-SNAPSHOT'
     }
 }
 
@@ -21,13 +21,13 @@ apply plugin: 'application'
 mainClassName = "demo.Main"
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.9'
+    gradleVersion = '2.14'
 }
 
 doop {
     //host = 'centauri.di.uoa.gr'
     host = 'localhost'
-    port = 8000
+    port = 8013
     username = 'saikos'
     password = 'saikos123'
     analysis.options.jre = '1.7'

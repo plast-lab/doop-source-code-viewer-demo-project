@@ -1,0 +1,4 @@
+#gradle dirs
+/.gradle
+/build
+
