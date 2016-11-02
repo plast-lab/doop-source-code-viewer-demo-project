@@ -32,15 +32,14 @@ task wrapper(type: Wrapper) {
     gradleVersion = '2.14'
 }
 
+
 doop {
     //host = 'centauri.di.uoa.gr'
     host = 'localhost'
     port = 8013
     username = 'saikos'
     password = 'saikos123'
-    analysis.options.jre = '1.7'
+    analysis.options.platform= 'java_7'
     analysis.options.use_original_names = true
-    //analysis.options.only_application_classes_fact_gen = true
     analysis.options.main_class = project.mainClassName
 }
-
