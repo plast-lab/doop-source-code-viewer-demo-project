@@ -1,3 +1,17 @@
+/*
+The new way to declare plugins.
+
+NOT currently working, see settings.gradle.
+
+Once operable, this will replace the buildScript block and the accompanying apply invocations.
+
+plugins {
+    id 'java'
+    id 'org.clyze.doop-gradle-plugin' version '1.0-SNAPSHOT'
+    id 'application'
+}
+*/
+
 buildscript {
 
     configurations.classpath.resolutionStrategy.cacheChangingModulesFor(0, 'seconds')
@@ -29,7 +43,7 @@ version '1.0-SNAPSHOT'
 mainClassName = "demo.Main"
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.14'
+    gradleVersion = '3.1'
 }
 
 
