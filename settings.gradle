@@ -1,15 +1,14 @@
-/*
-Due to a limitation of the new pluginRepositories block, the snapshot plugins are not supported.
-This limitation will become irrelevant once we start releasing the doop-gradle-plugin (and stop using snapshot versions).
-
+/* TODO: Not working as expected
 pluginRepositories {
-	//mavenLocal() is not supported neither
+	//mavenLocal() is not supported
 	maven {
 		url '~/.m2/repository'
 	}
 
+    gradlePluginPortal()
+
 	maven {
-        url 'http://centauri.di.uoa.gr:8081/artifactory/all-snapshot'
+        url 'http://centauri.di.uoa.gr:8081/artifactory/plast'
         credentials {
             username = artifactory_user
             password = artifactory_password

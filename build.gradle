@@ -1,7 +1,7 @@
 /*
 The new way to declare plugins.
 
-NOT currently working, see settings.gradle.
+TODO: NOT currently working (although it should).
 
 Once operable, this will replace the buildScript block and the accompanying apply invocations.
 
@@ -14,11 +14,14 @@ plugins {
 
 buildscript {
 
-    configurations.classpath.resolutionStrategy.cacheChangingModulesFor(0, 'seconds')
+    //configurations.classpath.resolutionStrategy.cacheChangingModulesFor(0, 'seconds')
 
     repositories {
+
+        mavenCentral()
+
         maven {
-            url 'http://centauri.di.uoa.gr:8081/artifactory/all-snapshot'
+            url "${artifactory_contextUrl}/plast"
             credentials {
                 username = "${artifactory_user}"
                 password = "${artifactory_password}"
@@ -27,9 +30,7 @@ buildscript {
     }
 
     dependencies {
-        classpath ('org.clyze:doop-gradle-plugin:1.0-SNAPSHOT') {
-            changing = true
-        }
+        classpath ('org.clyze:doop-gradle-plugin:1.+')
     }
 }
 
