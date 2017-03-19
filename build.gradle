@@ -17,13 +17,13 @@ buildscript {
     //configurations.classpath.resolutionStrategy.cacheChangingModulesFor(0, 'seconds')
 
     repositories {
-
         mavenLocal()
-
         mavenCentral()
-
         maven {
-            url "${artifactory_contextUrl}/plast"
+            url "${artifactory_contextUrl}/plast-public"
+        }
+        maven {
+            url "${artifactory_contextUrl}/plast-private"
             credentials {
                 username = "${artifactory_user}"
                 password = "${artifactory_password}"
